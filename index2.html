@@ -1,0 +1,85 @@
+<!DOCTYPE>
+
+<html>
+
+<head>
+<title>CSS Grid 2</title>
+<style>
+
+  .wrapper {
+    display:grid;
+    /* grid-template-columns:1fr 1fr 1fr; /*reccomended to use fr over % of px */
+    grid-template-columns:repeat(3, 1fr);
+    grid-gap: 1em;
+    /* grid-auto-rows: 100px; /*fixed height */
+    grid-auto-rows: minmax(100px, auto); /*100px by default but flexible if content is larger*/
+  }
+
+  .nested{
+    display: grid;
+    grid-template-columns:repeat(4, 1fr);
+    grid-auto-rows: 70px;
+    grid-gap: 1em;
+
+  }
+
+  .wrapper > div {
+    background: blue;
+    padding: 1em;
+  }
+
+  .wrapper > div:nth-child(odd) {  /*Selects every other div*/
+    background: yellow;
+  }
+
+  .nested >div {
+    border: #333 1px solid;
+    padding: 1em;
+  }
+
+</style>
+
+</head>
+<body>
+
+
+    <div class="wrapper">
+
+      <div>
+        Lorem ipsum dolor sit.
+      </div>
+      <div>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore laborum, asperiores labore commodi distinctio sed rerum voluptatum minus voluptas neque, esse dignissimos at deserunt provident, sapiente. Quo alias, suscipit officiis vel quisquam, accusantium consectetur, natus ducimus repudiandae similique facere fuga at eaque et. Expedita repellat aperiam veniam fugit natus amet neque perferendis consectetur iste odit! Nesciunt, earum, quam. Reiciendis neque, vero ducimus ipsam saepe dolores distinctio nihil deserunt expedita esse recusandae blanditiis placeat animi consequatur provident itaque sapiente iste officia repudiandae! Nihil architecto aspernatur minima, cum dolores nam illo delectus reiciendis voluptatem temporibus? Est suscipit, doloribus possimus ad atque praesentium, modi numquam cupiditate omnis. Voluptatum, odio, eveniet! Doloribus illo laboriosam harum, illum, accusantium nemo repudiandae perspiciatis eos nostrum. Optio deleniti inventore, laboriosam non dolores fuga aspernatur iure. Est beatae saepe nesciunt, culpa magni dolore dignissimos omnis quibusdam dolor fugit quam numquam? Obcaecati non corrupti nisi mollitia assumenda sapiente, reiciendis dolore, doloribus dignissimos qui eius ipsum pariatur culpa eligendi similique aliquid explicabo debitis perferendis quam rerum, sed esse maiores perspiciatis quae! Minus accusamus possimus sint similique in magnam, earum temporibus placeat odio, cum commodi. Aspernatur, quibusdam, beatae? Dignissimos eum placeat iste quae odit aperiam asperiores fugit illo velit cum. Minima, similique.</div>
+      <div>
+        Lorem ipsum dolor sit.
+      </div>
+      <div>
+        Lorem ipsum dolor sit.
+      </div>
+      <div class="nested">
+        <div>Lorem</div>
+        <div>Lorem</div>
+        <div>Lorem</div>
+        <div>Lorem</div>
+        <div>Lorem</div>
+        <div>Lorem</div>
+        <div>Lorem</div>
+
+
+
+      </div>
+      <div>
+        Lorem ipsum dolor sit.
+      </div>
+      <div>
+        Lorem ipsum dolor sit.
+      </div>
+      <div>
+        Lorem ipsum dolor sit.
+      </div>
+
+
+    </div>
+
+</body>
+</html>
